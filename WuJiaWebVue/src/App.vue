@@ -1,23 +1,31 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <no-nav-header></no-nav-header>
+    <resident-header></resident-header>
+    <property-header></property-header>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import NoNavHeader from './components/NoNavHeader'
+import ResidentHeader from './components/ResidentHeader'
+import PropertyHeader from './components/PropertyHeader'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    NoNavHeader,
+    ResidentHeader,
+    PropertyHeader
+
   }
 }
 </script>
 
 <style>
 #app {
+  background-color: #bbb;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
