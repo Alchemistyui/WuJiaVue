@@ -1,13 +1,14 @@
 <template>
 	<div id="ResidentHeader" class="box">
-
-		<a href=""><img v-bind:src="logoURL" alt="吾家" id="logo"></a>
+<ul>
+		<li><a href=""><img v-bind:src="logoURL" alt="吾家" id="logo"></a></li>
 		
-		<div v-for="(list,index) in navLists" class="nav" :class="{ selected:selectedIndex == index}" @click="isSelected(index)"><a href="#">{{list.text}}</a></div>
 
-		<a href=""><img v-bind:src="portraitURL" alt="头像" id="portrait"></a>
-		<a href=""><img v-bind:src="questionURL" alt="问题" id="question"></a>
-		
+		<li v-for="(list,index) in navLists" class="nav"  @click="isSelected(index)"><a href="#" :class="{ selected:selectedIndex == index}">{{list.text}}</a></li>
+
+		<li><a href=""><img v-bind:src="portraitURL" alt="头像" id="portrait"></a></li>
+		<li><a href=""><img v-bind:src="questionURL" alt="问题" id="question"></a></li>
+		</ul>
 
 	</div>
 </template>
@@ -46,43 +47,58 @@ export default {
 <style type="text/css">
 
 .box{
-	height: 50px;
-	background: rgba(255, 255, 255, 0.5);
+	height: 10%;
+	/*background: rgba(255, 255, 255, 0.5);*/
+	background-color: red;
+	display: -webkit-flex;
 	display: flex;
+	width: 100%;
+	position: relative;
 }
 .nav{
-	line-height: 50px;
-	display: inline-block;
-	margin-left: 50px;
+	line-height: 0.5rem;
+	margin-left: 0.5rem;
 	cursor: pointer;
+
+
+}
+ul {
+	cursor: default;
+    margin: 0 -10px;
+    width: auto;
+    height: 44px;
+}
+li {
+	    display: inline-block;
+    position: relative;
+    height: 44px;
+    z-index: 1;
+    vertical-align: top;
 }
 
 a {
 	display: block;
 	color: #2c3e50;
 	text-decoration: none;
-	width: 100px;
-	padding: 0px;
+	width: 150%;
+	padding-left: 10px;
+	padding-right: 10px;
+	max-height: 0.5rem;
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	font-size: 120%;
 }
 
 #logo {
-	width: 50px;
+	width: 0.5rem;
 	
 }
 
 #question {
-	width: 50px;
-	float: right;
-
-	
+	width: 0.5rem;
 
 }
 #portrait {
-	width: 50px;
-	float: right;
-
+	width: 0.5rem;
 
 }
 
