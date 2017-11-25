@@ -13,7 +13,6 @@
 </template>
 
 <script>
-// 未进行屏幕适配，只是单纯像素显示
 
 export default {
 	data () {
@@ -76,18 +75,7 @@ export default {
 	font-size: 120%;
 }
 
-#logo {
-	width: 0.5rem;
-	padding: 0px;
-	margin: 0px;
-}
-
-#question {
-	width: 0.5rem;
-	
-
-}
-#portrait {
+img {
 	width: 0.5rem;
 	
 }
