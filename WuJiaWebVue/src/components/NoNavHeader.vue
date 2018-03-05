@@ -26,7 +26,7 @@ export default {
 
 </script>
 
-<style type="text/css">
+<style>
 
 .noNavbox{
 	height: 0.5rem;
@@ -38,10 +38,11 @@ export default {
 a {
 	display: inline-block;
 }
-
+img {
+	height: 0.5rem;
+}
 #logo {
 	float: left;
-
 	
 }
 #portrait {

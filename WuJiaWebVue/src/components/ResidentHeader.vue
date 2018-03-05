@@ -42,7 +42,7 @@ export default {
 </script>
 
 
-<style type="text/css">
+<style>
 
 .box{
 	height: 0.5rem;

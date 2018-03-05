@@ -1,9 +1,12 @@
 <template>
   <div id="app">
-    <no-nav-header></no-nav-header>
-    <resident-header></resident-header>
-    <property-header></property-header>
+    <!-- <no-nav-header></no-nav-header> -->
+    <!-- <resident-header></resident-header>
+    <property-header></property-header> -->
+
+    <InitialPages></InitialPages>
     
+    <footer><p>Copyright © 2017 吾家 保留一切权利。</p></footer>
   </div>
 </template>
 
@@ -11,13 +14,15 @@
 import NoNavHeader from './components/NoNavHeader'
 import ResidentHeader from './components/ResidentHeader'
 import PropertyHeader from './components/PropertyHeader'
+import InitialPages from './components/InitialPages'
 
 export default {
   name: 'app',
   components: {
     NoNavHeader,
     ResidentHeader,
-    PropertyHeader
+    PropertyHeader,
+    InitialPages
 
   }
 }
@@ -32,6 +37,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 0.6rem;
+  /*margin-top: 0.6rem;*/
+}
+footer {
+  margin-top: 50px;
+  height:40px;
+  bottom:0;
+  left:0px;
+  background-color: #ee9147;
+  width: 100%;
+  padding-left: 20px;
+  text-align: center;
+  padding-top: 1px;
 }
 </style>
