@@ -4,25 +4,32 @@
     <!-- <resident-header></resident-header>
     <property-header></property-header> -->
 
-    <InitialPages></InitialPages>
+    <!-- <InitialPages></InitialPages> -->
+    <!-- <PropertyHomePage></PropertyHomePage> -->
+    <!-- <PropertyAccount></PropertyAccount> -->
+    <ModuleManage></ModuleManage>
     
     <footer><p>Copyright © 2017 吾家 保留一切权利。</p></footer>
   </div>
 </template>
 
 <script>
-import NoNavHeader from './components/NoNavHeader'
+import ModuleManage from './components/ModuleManage'
 import ResidentHeader from './components/ResidentHeader'
 import PropertyHeader from './components/PropertyHeader'
 import InitialPages from './components/InitialPages'
+import PropertyHomePage from './components/PropertyHomePage'
+import PropertyAccount from './components/PropertyAccount'
 
 export default {
   name: 'app',
   components: {
-    NoNavHeader,
+    ModuleManage,
     ResidentHeader,
     PropertyHeader,
-    InitialPages
+    InitialPages,
+    PropertyHomePage,
+    PropertyAccount
 
   }
 }

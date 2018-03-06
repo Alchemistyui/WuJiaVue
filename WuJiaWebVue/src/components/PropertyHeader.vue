@@ -39,4 +39,45 @@ export default {
 
 </script>
 
+<style>
 
+.box{
+	height: 0.5rem;
+	background: rgba(255, 255, 255, 0.5);
+	display: -webkit-flex;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	width: 100%;
+	min-width: 10rem;
+}
+.nav{
+	min-width: 0.7rem;
+	line-height: 0.5rem;
+	display: inline-block;
+	margin-left: 0.2rem;
+	cursor: pointer;
+	width: 100%;
+}
+
+.navLink {
+	display: block;
+	color: #2c3e50;
+	text-decoration: none;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	font-size: 120%;
+}
+
+img {
+	width: 0.5rem;
+	
+}
+
+.selected {
+	background-color: #F7DA32;
+}
+</style>
