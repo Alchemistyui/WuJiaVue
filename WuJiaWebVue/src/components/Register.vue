@@ -17,7 +17,7 @@
                     <option>住户</option>
                     <option>家政维修人员</option>
                     <option>物业客服</option>
-                    <option>物业公司</option>
+                    <option disabled value="">物业公司</option>
                 </select>
 
 
