@@ -7,7 +7,9 @@
     <!-- <InitialPages></InitialPages> -->
     <!-- <PropertyHomePage></PropertyHomePage> -->
     <!-- <PropertyAccount></PropertyAccount> -->
-    <ModuleManage></ModuleManage>
+    <!-- <ModuleManage></ModuleManage> -->
+    <!-- <ServiceManage></ServiceManage> -->
+    <EstateInform></EstateInform>
     
     <footer><p>Copyright © 2017 吾家 保留一切权利。</p></footer>
   </div>
@@ -15,18 +17,19 @@
 
 <script>
 import ModuleManage from './components/ModuleManage'
-import ResidentHeader from './components/ResidentHeader'
-import PropertyHeader from './components/PropertyHeader'
+import ServiceManage from './components/ServiceManage'
+import EstateInform from './components/EstateInform'
 import InitialPages from './components/InitialPages'
 import PropertyHomePage from './components/PropertyHomePage'
 import PropertyAccount from './components/PropertyAccount'
+
 
 export default {
   name: 'app',
   components: {
     ModuleManage,
-    ResidentHeader,
-    PropertyHeader,
+    ServiceManage,
+    EstateInform,
     InitialPages,
     PropertyHomePage,
     PropertyAccount

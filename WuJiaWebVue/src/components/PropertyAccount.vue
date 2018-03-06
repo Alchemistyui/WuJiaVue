@@ -32,7 +32,7 @@
                 <th>功能简介</th>
                 <th></th>
             </tr>
-            <!-- 需数据：模块名称，模块收费标准，模块购买日期及购买时间段 -->
+            <!-- 需数据：模块名称，模块收费标准，模块简介 -->
             <tr v-for="item in noBuyModules">
                 <td>{{item.name}}</td>
                 <td>{{item.standard}}</td>
