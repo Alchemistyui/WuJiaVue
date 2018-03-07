@@ -31,6 +31,7 @@
 export default {
     name: 'moduleManage',
     data () {
+        
         return {
             moduleName: '',
             priceStandard: '',

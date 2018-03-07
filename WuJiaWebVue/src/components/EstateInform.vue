@@ -3,7 +3,7 @@
         <div id="sideBar">
             <table>
                 <tr><a href="#">通知公告</a></tr>
-                <tr><a href="#">住户信息</a></tr>
+                <tr><a href="#">房屋及住户信息</a></tr>
             </table>
         </div>
 
@@ -20,7 +20,7 @@
             <button>立刻发布</button>
 
             <p>发布时间</p>
-            <datepicker v-model="date"></datepicker>
+            <datepicker v-model="date" language="ch"></datepicker>
             <button>定时发布</button>
         </div>
     </div>
@@ -32,13 +32,22 @@ export default {
     name: 'EstateInform',
     components: { datepicker },
     data () {
+        let now = new Date()
         return {
             informName: '',
             informContent: '',
             estates: ['1', '2', '3'],
             estate: '',
-            date: '2016-10-16'
+            // year: now.getFullYear(),
+            // month: now.getMonth(),
+            // day: now.getDate(),
+            date: now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate()
         }
     }
+    // computed: {
+    //     date () {
+    //         return this.year+'-'+(this.month+1)+'-'+this.day
+    //     }
+    // }
 }
 </script>

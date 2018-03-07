@@ -9,7 +9,8 @@
     <!-- <PropertyAccount></PropertyAccount> -->
     <!-- <ModuleManage></ModuleManage> -->
     <!-- <ServiceManage></ServiceManage> -->
-    <EstateInform></EstateInform>
+    <!-- <EstateInform></EstateInform> -->
+    <ResidentInfo></ResidentInfo>
     
     <footer><p>Copyright © 2017 吾家 保留一切权利。</p></footer>
   </div>
@@ -22,7 +23,7 @@ import EstateInform from './components/EstateInform'
 import InitialPages from './components/InitialPages'
 import PropertyHomePage from './components/PropertyHomePage'
 import PropertyAccount from './components/PropertyAccount'
-
+import ResidentInfo from './components/ResidentInfo'
 
 export default {
   name: 'app',
@@ -32,7 +33,8 @@ export default {
     EstateInform,
     InitialPages,
     PropertyHomePage,
-    PropertyAccount
+    PropertyAccount,
+    ResidentInfo
 
   }
 }
