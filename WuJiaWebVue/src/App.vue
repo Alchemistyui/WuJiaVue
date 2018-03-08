@@ -10,9 +10,10 @@
     <!-- <ModuleManage></ModuleManage> -->
     <!-- <ServiceManage></ServiceManage> -->
     <!-- <EstateInform></EstateInform> -->
-    <!-- <ResidentInfo></ResidentInfo> -->
-    <PayStandard></PayStandard>
-    <PayState></PayState>
+    <ResidentInfo></ResidentInfo>
+    <!-- <PayStandard></PayStandard>
+    <PayState></PayState> -->
+    <!-- <ServiceProblem></ServiceProblem> -->
     
     <footer><p>Copyright © 2017 吾家 保留一切权利。</p></footer>
   </div>
@@ -28,6 +29,7 @@ import PropertyAccount from './components/PropertyAccount'
 import ResidentInfo from './components/ResidentInfo'
 import PayStandard from './components/PayStandard'
 import PayState from './components/PayState'
+import ServiceProblem from './components/ServiceProblem'
 
 export default {
   name: 'app',
@@ -40,7 +42,8 @@ export default {
     PropertyAccount,
     ResidentInfo,
     PayStandard,
-    PayState
+    PayState,
+    ServiceProblem
 
   }
 }

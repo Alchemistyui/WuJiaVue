@@ -29,7 +29,7 @@
                     <th></th>
                 </tr>
 
-                <tr v-for="item in projects">
+                <tr v-for="item in pagedProjects">
                     <td>{{item.name}}</td>
                     <td>{{item.standard}}</td>
                     <td>{{item.deadline}}</td>
@@ -38,6 +38,15 @@
                     <td><a v-if="item.state != '已缴费'">前往缴费</a></td>
                 </tr>
             </table>
+
+            <p>共{{pagedProjects.length}}条当前工作目录</p>
+
+            <p class="pagination">
+                <a class="button" @click="projectsChangePage(-1)">上一页</a>
+                当前第 {{projectsPage}} 页 共{{ projectsTotal }}页
+                <a class="button" @click="projectsChangePage(1)">下一页</a>
+            </p>
+
         </div>
 
         <div id="residentTable">
@@ -50,13 +59,21 @@
                     <th>手机</th>
                 </tr>
 
-                <tr v-for="item in residents">
+                <tr v-for="item in pagedResidents">
                     <td>{{item.name}}</td>
                     <td>{{item.gender}}</td>
                     <td>{{item.identity}}</td>
                     <td>{{item.phone}}</td>
                 </tr>
             </table>
+
+            <p>共{{pagedResidents.length}}条当前工作目录</p>
+
+            <p class="pagination">
+                <a class="button" @click="residentsChangePage(-1)">上一页</a>
+                当前第 {{residentsPage}} 页 共{{ residentsTotal }}页
+                <a class="button" @click="residentsChangePage(1)">下一页</a>
+            </p>
         </div>
 
     </div>
@@ -64,20 +81,94 @@
 
 
 <script>
-    export default {
-        data () {
-            return {
-                building: '',
-                buildings: [],
-                house: '',
-                houses: [],
-                residents: [],
-                projects: [
-                    {name: '1', standard: '20/day', deadline: '2017-01-01', money: '200yuan', state: '已缴费'},
-                    {name: '1', standard: '20/day', deadline: '2017-01-01', money: '200yuan', state: '未缴费'}
-                ]
+export default {
+    data () {
+        return {
+            building: '',
+            buildings: [],
+            house: '',
+            houses: [],
+            residents: [],
+            projects: [
+            {name: '1', standard: '20', deadline: '2017-01-01', money: '200yuan', state: '已缴费'},
+            {name: '1', standard: '20', deadline: '2017-01-01', money: '200yuan', state: '未缴费'}
+            ],
+            residentsPage: 1,
+            projectsPage: 1,
+            residentsTotal: 0,
+            projectsTotal: 0
 
-            }
         }
-    }
-</script>
+    },
+    computed: {
+        pagedResidents : {
+            get: function () {
+                var arr = [];
+                
+                this.residentsTotal = Math.ceil(this.residents.length / 10)
+                let page = parseInt(this.residentspage - 1)
+                if (page < 0) {
+                    page = 0
+                }
+
+                arr = this.residents.slice(10 * page, 10 * (page + 1))
+                return arr   
+            }
+
+        },
+        pagedProjects : {
+            get: function () {
+                var arr = [];
+                
+                this.projectsTotal = Math.ceil(this.projects.length / 10)
+                let page = parseInt(this.projectsPage - 1)
+                if (page < 0) {
+                    page = 0
+                }
+
+                arr = this.projects.slice(10 * page, 10 * (page + 1))
+                return arr   
+            }
+
+        }
+    },
+    methods: {
+        residentsChangePage (num) {
+            let page = this.residentsPage
+            if (num === 1) {
+                if (page < this.residentsTotal) {
+                  page++
+              } else {
+                  window.alert('已是最后一页')
+              }
+          } else {
+            if (page > 1) {
+              page--
+          } else {
+              window.alert('已是第一页')
+            }
+          } 
+              // alert(this.page)
+          },
+          projectsChangePage (num) {
+            let page = this.projectsPage
+            if (num === 1) {
+                if (page < this.projectsTotal) {
+                  page++
+              } else {
+                  window.alert('已是最后一页')
+              }
+          } else {
+            if (page > 1) {
+              page--
+          } else {
+              window.alert('已是第一页')
+            }
+          } 
+              // alert(this.page)
+          },
+
+
+      }
+  }
+  </script>
