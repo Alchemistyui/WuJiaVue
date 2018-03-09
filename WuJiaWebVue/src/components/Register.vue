@@ -10,14 +10,14 @@
                 <p><label for="userName">名字 </label><input id="userName" v-model="userName"></p>
                 <p><label for="userId">账号 </label><input id="userId" v-model="userId"></p>
                 <p><label for="registerSafeCode">验证码 </label><input id="registerSafeCode" v-model="registerSafeCode"></p>
-                <p><label for="password">密码 </label><input id="password" v-model="password"></p>
-                <p><label for="rePassword">确认密码 </label><input id="rePassword" v-model="rePassword"></p>
+                <p><label for="password">密码 </label><input type="password" id="password" v-model="password"></p>
+                <p><label for="rePassword">确认密码 </label><input type="password" id="rePassword" v-model="rePassword"></p>
 
                 <select v-model="identity">
                     <option>住户</option>
                     <option>家政维修人员</option>
-                    <option>物业客服</option>
-                    <option disabled value="">物业公司</option>
+                    <!-- <option>物业客服</option> -->
+                    <option value="">物业公司</option>
                 </select>
 
 

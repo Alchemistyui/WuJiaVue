@@ -20,7 +20,7 @@
 
     <div id="LogInModule" v-if="selected=='logIn'">
         <p><label for="userId">账号 </label><input id="userId" v-model="userId"></p>
-        <p><label for="password">密码 </label><input id="password" v-model="password"></p>
+        <p><label for="password">密码 </label><input type="password" id="password" v-model="password"></p>
 
         <button @click="selected = 'forget'">忘记密码</button>
         <button id="submit">登录</button>
@@ -28,7 +28,7 @@
     </div>
 
     <div id="forgetPassword" v-else-if="selected=='forget'">
-        <button>用手机号重置密码</button>
+        <button @click="resetByPhone = true">用手机号重置密码</button>
         <button @click="resetByPhone = false">用邮箱重置密码</button>
         <p>验证码会发送至您绑定的{{resetByPhone ? '手机' : '邮箱'}}<span>{{resetByPhone ? userPhoneNumber : userEmail}}</span></p>
 <!--             <p>验证码会发送至您绑定的邮箱<span>{{userEmail}}</span></p>

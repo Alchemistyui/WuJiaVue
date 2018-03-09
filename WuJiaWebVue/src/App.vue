@@ -7,13 +7,14 @@
     <!-- <InitialPages></InitialPages> -->
     <!-- <PropertyHomePage></PropertyHomePage> -->
     <!-- <PropertyAccount></PropertyAccount> -->
-    <!-- <ModuleManage></ModuleManage> -->
+    <ModuleManage></ModuleManage>
     <!-- <ServiceManage></ServiceManage> -->
     <!-- <EstateInform></EstateInform> -->
-    <ResidentInfo></ResidentInfo>
+    <!-- <ResidentInfo></ResidentInfo> -->
     <!-- <PayStandard></PayStandard>
     <PayState></PayState> -->
     <!-- <ServiceProblem></ServiceProblem> -->
+    <!-- <SolveProblem></SolveProblem> -->
     
     <footer><p>Copyright © 2017 吾家 保留一切权利。</p></footer>
   </div>
@@ -30,6 +31,7 @@ import ResidentInfo from './components/ResidentInfo'
 import PayStandard from './components/PayStandard'
 import PayState from './components/PayState'
 import ServiceProblem from './components/ServiceProblem'
+import SolveProblem from './components/SolveProblem'
 
 export default {
   name: 'app',
@@ -43,7 +45,8 @@ export default {
     ResidentInfo,
     PayStandard,
     PayState,
-    ServiceProblem
+    ServiceProblem,
+    SolveProblem
 
   }
 }
