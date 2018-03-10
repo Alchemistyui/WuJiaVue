@@ -36,8 +36,8 @@ export default {
         return {
             informName: '',
             informContent: '',
-            estates: ['1', '2', '3'],
-            estate: '',
+            estates: ['A小区', 'B小区', 'C小区'],
+            estate: 'A小区',
             // year: now.getFullYear(),
             // month: now.getMonth(),
             // day: now.getDate(),

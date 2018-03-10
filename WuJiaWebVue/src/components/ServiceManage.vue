@@ -37,7 +37,8 @@ export default {
         return {
             IDNumber: '',
             services: [
-            {name: 'bigbiao', email: '123@qq.com', phone: '12312'}
+            {name: '李雷', email: '123@qq.com', phone: '18212341234'},
+            {name: '韩梅梅', email: '123@qq.com', phone: '13712341234'}
             ],
             name: '',
             phone: ''

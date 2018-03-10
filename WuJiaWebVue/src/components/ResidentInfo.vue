@@ -39,9 +39,11 @@
                 </tr>
             </table>
 
+
             <p>共{{pagedProjects.length}}条当前工作目录</p>
 
             <p class="pagination">
+                <p>每页显示5条</p>
                 <a class="button" @click="projectsChangePage(-1)">上一页</a>
                 当前第 {{projectsPage}} 页 共{{ projectsTotal }}页
                 <a class="button" @click="projectsChangePage(1)">下一页</a>
@@ -67,9 +69,11 @@
                 </tr>
             </table>
 
+            
             <p>共{{pagedResidents.length}}条当前工作目录</p>
 
             <p class="pagination">
+                <p>每页显示5条</p>
                 <a class="button" @click="residentsChangePage(-1)">上一页</a>
                 当前第 {{residentsPage}} 页 共{{ residentsTotal }}页
                 <a class="button" @click="residentsChangePage(1)">下一页</a>
@@ -84,10 +88,10 @@
 export default {
     data () {
         return {
-            building: '',
-            buildings: [],
-            house: '',
-            houses: [],
+            building: '1栋',
+            buildings: ['1栋', '2栋', '3栋'],
+            house: '1-01-01',
+            houses: ['1-01-01','1-01-02','1-02-01','1-02-02','1-03-01','1-03-02'],
             residents: [],
             projects: [
             {name: '1', standard: '20', deadline: '2017-01-01', money: '200yuan', state: '已缴费'},

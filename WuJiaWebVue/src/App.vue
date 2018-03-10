@@ -7,10 +7,10 @@
     <!-- <InitialPages></InitialPages> -->
     <!-- <PropertyHomePage></PropertyHomePage> -->
     <!-- <PropertyAccount></PropertyAccount> -->
-    <ModuleManage></ModuleManage>
+    <!-- <ModuleManage></ModuleManage> -->
     <!-- <ServiceManage></ServiceManage> -->
     <!-- <EstateInform></EstateInform> -->
-    <!-- <ResidentInfo></ResidentInfo> -->
+    <ResidentInfo></ResidentInfo>
     <!-- <PayStandard></PayStandard>
     <PayState></PayState> -->
     <!-- <ServiceProblem></ServiceProblem> -->
