@@ -10,9 +10,9 @@
     <!-- <ModuleManage></ModuleManage> -->
     <!-- <ServiceManage></ServiceManage> -->
     <!-- <EstateInform></EstateInform> -->
-    <ResidentInfo></ResidentInfo>
-    <!-- <PayStandard></PayStandard>
-    <PayState></PayState> -->
+    <!-- <ResidentInfo></ResidentInfo> -->
+    <!-- <PayStandard></PayStandard> -->
+    <PayState></PayState>
     <!-- <ServiceProblem></ServiceProblem> -->
     <!-- <SolveProblem></SolveProblem> -->
     
