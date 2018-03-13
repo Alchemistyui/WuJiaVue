@@ -4,7 +4,7 @@
     <!-- <resident-header></resident-header>
     <property-header></property-header> -->
 
-    <!-- <InitialPages></InitialPages> -->
+    <InitialPages></InitialPages>
     <!-- <PropertyHomePage></PropertyHomePage> -->
     <!-- <PropertyAccount></PropertyAccount> -->
     <!-- <ModuleManage></ModuleManage> -->
@@ -12,7 +12,7 @@
     <!-- <EstateInform></EstateInform> -->
     <!-- <ResidentInfo></ResidentInfo> -->
     <!-- <PayStandard></PayStandard> -->
-    <PayState></PayState>
+    <!-- <PayState></PayState> -->
     <!-- <ServiceProblem></ServiceProblem> -->
     <!-- <SolveProblem></SolveProblem> -->
     
@@ -32,6 +32,7 @@ import PayStandard from './components/PayStandard'
 import PayState from './components/PayState'
 import ServiceProblem from './components/ServiceProblem'
 import SolveProblem from './components/SolveProblem'
+import NoNavHeader from './components/NoNavHeader'
 
 export default {
   name: 'app',
@@ -46,23 +47,24 @@ export default {
     PayStandard,
     PayState,
     ServiceProblem,
-    SolveProblem
+    SolveProblem,
+    NoNavHeader
 
   }
 }
 </script>
 
 <style>
-#app {
+/*#app {
   background-color: #bbb;
   min-width: 10rem;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  /*color: #2c3e50;*/
   /*margin-top: 0.6rem;*/
-}
+  
 footer {
   margin-top: 50px;
   height:40px;
