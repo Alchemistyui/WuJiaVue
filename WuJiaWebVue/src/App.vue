@@ -4,7 +4,7 @@
     <!-- <resident-header></resident-header>
     <property-header></property-header> -->
 
-    <InitialPages></InitialPages>
+    <InitialPages :style="{backgroundImage: 'url(' +backgroundURL + ')'}"></InitialPages>
     <!-- <PropertyHomePage></PropertyHomePage> -->
     <!-- <PropertyAccount></PropertyAccount> -->
     <!-- <ModuleManage></ModuleManage> -->
@@ -50,6 +50,11 @@ export default {
     SolveProblem,
     NoNavHeader
 
+  },
+  data () {
+    return {
+      backgroundURL: './src/assets/images/house.jpg'
+    }
   }
 }
 </script>
@@ -64,9 +69,9 @@ export default {
   text-align: center;
   /*color: #2c3e50;*/
   /*margin-top: 0.6rem;*/
-  
+
 footer {
-  margin-top: 50px;
+ /* margin-top: 50px;*/
   height:40px;
   bottom:0;
   left:0px;
