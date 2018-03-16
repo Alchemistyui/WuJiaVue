@@ -52,7 +52,7 @@
                 <p class="col-sm-3"></p>
                 <router-link v-bind:to="'/PropertyAccount'" class="btn btn-warning col-sm-2">返回</router-link>
                 <p class="col-sm-1"></p>
-                <button class="btn btn-success col-sm-2">确定</button>
+                <a class="btn btn-success col-sm-2">确定</a>
             </div>
             <!-- </div> -->
         </div>

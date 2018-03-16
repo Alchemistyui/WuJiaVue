@@ -115,8 +115,8 @@
 
 
             <div class="row">
-                            <p class="col-sm-3"></p>
-                            <router-link id="edit" v-bind:to="'/PayStandard'"  class="col-sm-5 btn btn-success">修改或添加项目</router-link>
+                            <p class="col-sm-4"></p>
+                            <router-link id="edit" v-bind:to="'/PayStandard'"  class="col-sm-4 btn btn-success">修改或添加项目</router-link>
                         </div>
         </div>
     </div>

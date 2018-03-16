@@ -62,7 +62,8 @@ export default {
 	min-width: 10rem;
 }
 .nav{
-	min-width: 0.7rem;
+	min-width: 0.6rem;
+	/*max-width: 2.2rem;*/
 	line-height: 0.5rem;
 	display: inline-block;
 	margin-left: 0.2rem;
