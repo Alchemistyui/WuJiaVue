@@ -6,14 +6,14 @@
     <!-- <PropertyAccount></PropertyAccount> -->
     <!-- <ModuleManage></ModuleManage> -->
     <!-- <ServiceManage></ServiceManage> -->
-    <EstateInform></EstateInform>
+    <!-- <EstateInform></EstateInform> -->
     <!-- <ResidentInfo></ResidentInfo> -->
     <!-- <PayStandard></PayStandard> -->
-    <!-- <PayState></PayState> -->
+    <PayState></PayState>
     <!-- <ServiceProblem></ServiceProblem> -->
     <!-- <SolveProblem></SolveProblem> -->
     
-    <footer><p>Copyright © 2017 吾家 保留一切权利。</p></footer>
+    <footer><p>Copyright © 2018 吾家 保留一切权利。</p></footer>
   </div>
 </template>
 

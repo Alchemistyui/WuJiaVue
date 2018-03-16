@@ -1,64 +1,89 @@
 <template>
     <div>
-        <div id="sideBar">
-            <table>
-                <tr><a href="#">通知公告</a></tr>
-                <tr><a href="#">房屋及住户信息</a></tr>
-            </table>
-        </div>
+        <PropertyHeader></PropertyHeader>
 
-        <p>选择小区</p>
-        <select v-model="estate">
-            <option v-for="item in estates">{{item}}</option>
-        </select>        
+        <div class="row">
+            <div id="sideBar" class="col-sm-2">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">通知公告</a></li>
+                    <li class="list-group-item"><a href="#">房屋及住户信息</a></li>
+                </ul>
+            </div>
 
-        <p>选择楼栋</p>
-        <select v-model="building">
-            <option v-for="item in buildings">{{item}}</option>
-        </select>
+            <div id="main"  class="col-sm-7 jumbotron">
+                <form class="form-horizontal">
+                    <div class="row">
+                        <p class="col-sm-2 text-right"><label>选择小区</label></p>
+                        <div class="col-sm-2">
+                            <select v-model="estate" class="form-control">
+                                <option v-for="item in estates">{{item}}</option>
+                            </select>    
+                        </div>   
+                        
 
-        <p>选择房屋</p>
-        <select v-model="house">
-            <option v-for="item in houses">{{item}}</option>
-        </select>
+                        <p class="col-sm-2 text-right"><label>选择楼栋</label></p>
+                        <div class="col-sm-2">
+                            <select v-model="building" class="form-control">
+                                <option v-for="item in buildings">{{item}}</option>
+                            </select>
+                        </div>
 
-        <div id="projectTable">
-            <p>收费项目</p>
-            <table>
-                <tr>
-                    <th>项目名称</th>
-                    <th>缴费标准</th>
-                    <th>截止时间</th>
-                    <th>应缴金额(元)</th>
-                    <th>缴费状态</th>
-                    <th></th>
-                </tr>
-
-                <tr v-for="item in pagedProjects">
-                    <td>{{item.name}}</td>
-                    <td>{{item.standard}}</td>
-                    <td>{{item.deadline}}</td>
-                    <td>{{item.money}}</td>
-                    <td>{{item.state}}</td>
-                    <td><a v-if="item.state != '已缴费'">前往缴费</a></td>
-                </tr>
-            </table>
+                        <p class="col-sm-2 text-right"><label>选择房屋</label></p>
+                        <div class="col-sm-2">
+                            <select v-model="house" class="form-control">
+                                <option v-for="item in houses">{{item}}</option>
+                            </select>
+                        </div>
+                    </div> 
+                </form>
 
 
-            <p>共{{projects.length}}条当前工作目录</p>
+                <div id="projectTable">
+                    <h3>收费项目</h3>
+                    <table class="table table-striped table-bordered">
+                     <tbody>
+                        <tr>
+                            <th>项目名称</th>
+                            <th>缴费标准</th>
+                            <th>截止时间</th>
+                            <th>应缴金额(元)</th>
+                            <th>缴费状态</th>
+                            <th></th>
+                        </tr>
 
-            <p class="pagination">
-                <p>每页显示5条</p>
-                <a class="button" @click="projectsChangePage(-1)">上一页</a>
-                当前第 {{projectsPage}} 页 共{{ projectsTotal }}页
-                <a class="button" @click="projectsChangePage(1)">下一页</a>
-            </p>
+                        <tr v-for="item in pagedProjects">
+                            <td>{{item.name}}</td>
+                            <td>{{item.standard}}</td>
+                            <td>{{item.deadline}}</td>
+                            <td>{{item.money}}</td>
+                            <td>{{item.state}}</td>
+                            <td><a v-if="item.state != '已缴费'">前往缴费</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <p class="col-sm-4">共{{projects.length}}条当前工作目录&nbsp;&nbsp; 每页显示5条</p>
+
+                    <p class="pagination col-sm-4">
+                        <!-- <p>每页显示5条</p> -->
+                        <nav aria-label="...">
+                          <ul class="pager">
+                            <li><a class="button" @click="projectsChangePage(-1)">上一页</a></li>
+                            当前第 {{projectsPage}} 页 共{{ projectsTotal }}页
+                            <li><a class="button" @click="projectsChangePage(1)">下一页</a></li>
+                        </ul>
+                    </nav>
+                </p>
+            </div>
 
         </div>
 
         <div id="residentTable">
-            <p>住户信息</p>
-            <table>
+            <h3>住户信息</h3>
+            <table class="table table-striped table-bordered">
+             <tbody>
+
                 <tr>
                     <th>姓名</th>
                     <th>性别</th>
@@ -72,25 +97,46 @@
                     <td>{{item.identity}}</td>
                     <td>{{item.phone}}</td>
                 </tr>
-            </table>
+            </tbody>
+        </table>
 
-            
-            <p>共{{residents.length}}条当前工作目录</p>
+        <div class="row">
+            <p class="col-sm-4">共{{residents.length}}条当前工作目录&nbsp;&nbsp; 每页显示5条</p>
 
-            <p class="pagination">
-                <p>每页显示5条</p>
-                <a class="button" @click="residentsChangePage(-1)">上一页</a>
-                当前第 {{residentsPage}} 页 共{{ residentsTotal }}页
-                <a class="button" @click="residentsChangePage(1)">下一页</a>
-            </p>
-        </div>
-
+            <p class="pagination col-sm-4">
+                <!-- <p>每页显示5条</p> -->
+                <nav aria-label="...">
+                  <ul class="pager">
+                    <li><a class="button" @click="residentsChangePage(-1)">上一页</a></li>
+                    当前第 {{residentsPage}} 页 共{{ residentsTotal           }}页
+                    <li><a class="button" @click="residentsChangePage(1)">下一页</a></li>
+                </ul>
+            </nav>
+        </p>
     </div>
+        <!-- <p>共{{residents.length}}条当前工作目录&nbsp;&nbsp; 每页显示5条</p>
+
+        <p class="pagination">
+            <p>每页显示5条</p> 
+            <a class="button" @click="residentsChangePage(-1)">上一页</a>
+            当前第 {{residentsPage}} 页 共{{ residentsTotal }}页
+            <a class="button" @click="residentsChangePage(1)">下一页</a>
+        </p> -->
+    </div>
+</div>
+</div>
+
+</div>
 </template>
 
 
 <script>
+import PropertyHeader from './PropertyHeader'
+
 export default {
+    components: { 
+        PropertyHeader
+    },
     data () {
         return {
             estate: 'A小区',
@@ -115,7 +161,7 @@ export default {
             ],
             residentsPage: 1,
             projectsPage: 1,
-            residentsTotal: 0,
+            residentsTotal: 1,
             projectsTotal: 0
 
         }
@@ -124,7 +170,7 @@ export default {
         // pagedResidents : {
         //     get: function () {
         //         var arr = [];
-                
+
         //         this.residentsTotal = Math.ceil(this.residents.length / 5)
         //         let page = parseInt(this.residentspage - 1)
         //         if (page < 0) {
@@ -154,24 +200,24 @@ export default {
         }
     },
     methods: {
-        // residentsChangePage (num) {
-        //     let page = this.residentsPage
-        //     if (num === 1) {
-        //         if (page < this.residentsTotal) {
-        //           page++
-        //       } else {
-        //           window.alert('已是最后一页')
-        //       }
-        //   } else {
-        //     if (page > 1) {
-        //       page--
-        //   } else {
-        //       window.alert('已是第一页')
-        //     }
-        //   } 
-        //       // alert(this.page)
-        //   },
-          projectsChangePage (num) {
+        residentsChangePage (num) {
+            let page = this.residentsPage
+            if (num === 1) {
+                if (page < this.residentsTotal) {
+                  page++
+              } else {
+                  window.alert('已是最后一页')
+              }
+          } else {
+            if (page > 1) {
+              page--
+          } else {
+              window.alert('已是第一页')
+            }
+          } 
+              // alert(this.page)
+          },
+        projectsChangePage (num) {
             // let page = this.projectsPage
             // alert(this.projectsTotal)
             if (num === 1) {
@@ -185,8 +231,8 @@ export default {
               this.projectsPage--
           } else {
               window.alert('已是第一页')
-            }
-          } 
+          }
+      } 
               // alert(this.projectsPage)
           },
 
@@ -194,3 +240,27 @@ export default {
       }
   }
   </script>
+
+  <style>
+  .jumbotron {
+    margin: 0.4rem 0.3rem 0.4rem 0.1rem;
+    width: 75%;
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 0.2rem;
+    background: rgba(255, 255, 255, 0.7);
+}
+#sideBar {
+    margin-top: 0.4rem;
+    margin-left: 0.1rem;
+}
+#projectTable p, #residentTable p {
+    font-size: smaller;
+    display: inline;
+}
+/*.pagination {
+    float: left;
+    margin-left: 3rem;
+    }*/
+    </style>

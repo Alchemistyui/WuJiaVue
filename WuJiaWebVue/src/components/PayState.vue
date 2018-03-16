@@ -1,11 +1,21 @@
 <template>
     <div>
-        <div id="sideBar">
+
+       <PropertyHeader></PropertyHeader>
+
+      <!--  <div class="row">
+        <div id="sideBar" class="col-sm-2">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#">通知公告</a></li>
+                <li class="list-group-item"><a href="#">房屋及住户信息</a></li>
+            </ul>
+        </div> -->
+        <!-- <div id="sideBar">
             <table>
                 <tr><a href="#">缴费状态</a></tr>
                 <tr><a href="#">缴费标准</a></tr>
             </table>
-        </div>
+        </div> -->
 
         <div id="unPayTable">
             <p>未缴费情况</p>
@@ -81,9 +91,11 @@
 
     <script>
     import VueDatepickerLocal from 'vue-datepicker-local'
+    import PropertyHeader from './PropertyHeader'
     export default {
       components: {
-        VueDatepickerLocal
+        VueDatepickerLocal,
+        PropertyHeader
     },
     data () {
         return {
