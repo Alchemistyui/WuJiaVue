@@ -1,53 +1,81 @@
 <template>
     <div id="account">
-        <!-- 需额外的后端数据 -->
-        <img v-bind:src="propertyURL" id="logo">
-        <p id="xiaoquName">A小区</p>
-        <!-- 需额外的后端数据 -->
-        <p>物业公司 <span id="propertyName">{{propertyName}}</span> </p>
-        <!-- 需额外的后端数据 -->
-        <p>入驻人数<span>{{residentNum}}</span></p>
-        <p>客服人数<span>{{serviceNum}}</span></p>
 
-        <table>
-            <tr>
-                <th>模块名称</th>
-                <th>收费标准</th>
-                <th>剩余时间(天)</th>
-                <th></th>
-            </tr>
-            <!-- 需数据：模块名称，模块收费标准，模块购买日期及购买时间段 -->
-            <tr v-for="item in boughtModules">
-                <td>{{item.name}}</td>
-                <td>{{item.standard}}</td>
-                <!-- <td>{{item.time - date - item.boughtDate}}</td> -->
-                <td>{{item.date}}</td>
-                <td><a href="#">续费</a></td>
-            </tr>
+        <PropertyHeader></PropertyHeader>
+
+        <!-- 需额外的后端数据 -->
+        <div id="info" class="panel panel-default">
+          <div class="panel-body">
+            <img v-bind:src="propertyURL" id="Propertylogo" class="img-circle">
+            <div id="textInfo">
+                <h1>A小区</h1>
+                <!-- 需额外的后端数据 -->
+                <h3>物业公司&nbsp;&nbsp; <em id="propertyName">{{propertyName}}</em> </h3>
+                <!-- 需额外的后端数据 -->
+                <h4>入驻人数<span>{{residentNum}}</span></h4>
+                <h4>客服人数<span>{{serviceNum}}</span></h4>
+            </div>
+        </div>
+    </div>
+
+    <div id="tables" class="panel panel-default">
+      <div class="panel-body">
+        <h3>已购模块</h3>
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <th>模块名称</th>
+                    <th>收费标准</th>
+                    <th>剩余时间(天)</th>
+                    <th></th>
+                </tr>
+                <!-- 需数据：模块名称，模块收费标准，模块购买日期及购买时间段 -->
+                <tr v-for="item in boughtModules">
+                    <td>{{item.name}}</td>
+                    <td>{{item.standard}}</td>
+                    <!-- <td>{{item.time - date - item.boughtDate}}</td> -->
+                    <td>{{item.date}}</td>
+                    <td><a href="#">续费</a></td>
+                </tr>
+            </tbody>
         </table>
 
-        <table>
-            <tr>
-                <th>模块名称</th>
-                <th>收费标准</th>
-                <th>功能简介</th>
-                <th></th>
-            </tr>
-            <!-- 需数据：模块名称，模块收费标准，模块简介 -->
-            <tr v-for="item in noBuyModules">
-                <td>{{item.name}}</td>
-                <td>{{item.standard}}</td>
-                <td>{{item.intro}}</td>
-                <td><a href="#">查看更多</a></td>
-            </tr>
+        <h3>未购模块</h3>
+        <table class="table table-bordered">
+            <!-- <thead>未购模块</thead> -->
+            <tbody>
+                <tr>
+                    <th>模块名称</th>
+                    <th>收费标准</th>
+                    <th>功能简介</th>
+                    <th></th>
+                </tr>
+                <!-- 需数据：模块名称，模块收费标准，模块简介 -->
+                <tr v-for="item in noBuyModules">
+                    <td style="width: 25%">{{item.name}}</td>
+                    <td style="width: 25%">{{item.standard}}</td>
+                    <td style="width: 30%">{{item.intro}}</td>
+                    <td style="width: 25%; text-align: center"><a href="#">查看更多</a></td>
+                </tr>
+            </tbody>
         </table>
     </div>
+</div>
+
+
+</div>
 </template>
 
 
 <script>
+import PropertyHeader from './PropertyHeader'
+
 export default {
     name: 'PropertyAccount',
+    components: {
+        PropertyHeader
+
+    },
     data () {
         return {
             propertyName: 'AAA物业公司',
@@ -67,3 +95,32 @@ export default {
     }
 }
 </script>
+
+<style>
+/*#account {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    }*/
+    #Propertylogo {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    #info, #tables {
+        margin: auto;
+        width: 90%;
+        margin-top: 0.3rem;
+    }
+    #info img {
+        /*padding-left: 30%;*/
+        float: left;
+        margin-left: 30%;
+    }
+    #textInfo {
+
+        padding-left: 50%;
+    }
+    #info, #tables {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid #cccccc;
+        border-radius: 0.2rem;
+    }
+    </style>

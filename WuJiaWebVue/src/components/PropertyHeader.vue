@@ -80,4 +80,8 @@ img {
 .selected {
 	background-color: #F7DA32;
 }
+ #PropertyHeader a:hover,#PropertyHeader a:visited,#PropertyHeader a:link,#PropertyHeader a:active {
+	text-decoration: none;
+	color: #000;
+}
 </style>

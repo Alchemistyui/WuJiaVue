@@ -1,15 +1,12 @@
 <template>
   <div id="app">
-    <!-- <no-nav-header></no-nav-header> -->
-    <!-- <resident-header></resident-header>
-    <property-header></property-header> -->
 
-    <InitialPages :style="{backgroundImage: 'url(' +backgroundURL + ')'}"></InitialPages>
+    <!-- <InitialPages :style="{backgroundImage: 'url(' +backgroundURL + ')'}"></InitialPages> -->
     <!-- <PropertyHomePage></PropertyHomePage> -->
     <!-- <PropertyAccount></PropertyAccount> -->
     <!-- <ModuleManage></ModuleManage> -->
     <!-- <ServiceManage></ServiceManage> -->
-    <!-- <EstateInform></EstateInform> -->
+    <EstateInform></EstateInform>
     <!-- <ResidentInfo></ResidentInfo> -->
     <!-- <PayStandard></PayStandard> -->
     <!-- <PayState></PayState> -->
@@ -60,25 +57,26 @@ export default {
 </script>
 
 <style>
-/*#app {
-  background-color: #bbb;
-  min-width: 10rem;
+#app {
+  background-color: #FAFAD2;
+  /*min-width: 10rem;*/
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  /*color: #2c3e50;*/
+ /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;*/
+  /*text-align: center;*/
+  /*color: #2c3e50;
   /*margin-top: 0.6rem;*/
-
+}
 footer {
  /* margin-top: 50px;*/
-  height:40px;
-  bottom:0;
-  left:0px;
-  background-color: #ee9147;
+  height:0.4rem;
+  bottom:0rem;
+  left:0rem;
+  background-color: #F4A460;
   width: 100%;
-  padding-left: 20px;
+  padding-left: 0.2rem;
   text-align: center;
-  padding-top: 1px;
+  padding-top: 0.1rem;
+  margin-bottom: -2rem;
 }
 </style>
