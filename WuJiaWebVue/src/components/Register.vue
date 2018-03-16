@@ -49,7 +49,7 @@
                             </form>
                         </div>
 
-                        <PropertyRegist v-if="propertyRegist"></PropertyRegist>
+                        <!-- <PropertyRegist v-if="propertyRegist"></PropertyRegist> -->
 
                     </div>
                 </template>
@@ -78,7 +78,7 @@
                     methods: {
                         show: function () {
                             this.propertyRegist = true
-                            alert('emm')
+                            // alert('emm')
                         }
                     }
                 }

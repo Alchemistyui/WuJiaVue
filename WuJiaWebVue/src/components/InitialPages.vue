@@ -58,6 +58,8 @@
                 </div>
 
                 <Register v-else></Register>
+
+                <!-- <PropertyRegist v-else></PropertyRegist> -->
             </div>
         </div>
     </div>
@@ -68,6 +70,7 @@
 <script>
 import NoNavHeader from './NoNavHeader'
 import Register from './Register'
+// import PropertyRegist from './PropertyRegist'
 
 export default {
     name: 'InitialPages',
