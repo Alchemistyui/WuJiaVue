@@ -3,13 +3,14 @@
 
        <PropertyHeader></PropertyHeader>
 
-      <!--  <div class="row">
+       <div class="row">
         <div id="sideBar" class="col-sm-2">
             <ul class="list-group">
-                <li class="list-group-item"><a href="#">通知公告</a></li>
-                <li class="list-group-item"><a href="#">房屋及住户信息</a></li>
+                <li class="list-group-item"><a href="#">缴费状态</a></li>
+                <li class="list-group-item"><a href="#">缴费标准</a></li>
             </ul>
-        </div> -->
+        </div>
+
         <!-- <div id="sideBar">
             <table>
                 <tr><a href="#">缴费状态</a></tr>
@@ -17,51 +18,78 @@
             </table>
         </div> -->
 
-        <div id="unPayTable">
-            <p>未缴费情况</p>
-            <table>
-                <tr>
-                    <th>房屋编号</th>
-                    <th>缴费项目</th>
-                    <th>截止时间</th>
-                    <th>应缴金额(元)</th>
-                    <th>户主姓名</th>
-                    <th>户主手机</th>
-                    <th></th>
-                </tr>
+        <div id="main" class="col-sm-9 jumbotron">
+            <div id="unPayTable">
+                <h3>未缴费情况</h3>
+                <table class="table table-striped table-bordered">
+                 <tbody>
+                    <tr>
+                        <th>房屋编号</th>
+                        <th>缴费项目</th>
+                        <th>截止时间</th>
+                        <th>应缴金额(元)</th>
+                        <th>户主姓名</th>
+                        <th>户主手机</th>
+                        <th></th>
+                    </tr>
 
-                <tr v-for="item in paginate">
-                    <td>{{item.house}}</td>
-                    <td>{{item.project}}</td>
-                    <td>{{item.deadline}}</td>
-                    <td>{{item.money}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.phone}}</td>
-                    <td><button onclick="alert('已发送提醒')">提醒缴费</button></td>
-                </tr>
+                    <tr v-for="item in paginate">
+                        <td>{{item.house}}</td>
+                        <td>{{item.project}}</td>
+                        <td>{{item.deadline}}</td>
+                        <td>{{item.money}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.phone}}</td>
+                        <td><button class="btn btn-success" onclick="alert('已发送提醒')">提醒缴费</button></td>
+                    </tr>
+                </tbody>
             </table>
-            <p>每页显示{{limit}}条</p>
-            <p>共{{unPays.length}}条当前工作目录</p>
 
-            <p class="pagination">
-                <a class="button" @click="changePage(-1)">上一页</a>
-                当前第<input v-model="page" type="text" class="page">页 共{{ total }}页
-                <a class="button" @click="changePage(1)">下一页</a>
+            <div id="myPageControl" class="row">
+                <p class="col-sm-4">共{{unPays.length}}条当前工作目录&nbsp;&nbsp; 每页显示{{limit}}条</p>
+
+                <p class="pagination col-sm-4">
+                    <!-- <p>每页显示5条</p> -->
+                    <nav aria-label="...">
+                      <ul class="pager">
+                        <li><a class="button" @click="changePage(-1)">上一页</a></li>
+                        当前第 {{page}} 页 共{{ total }}页
+                        <li><a class="button" @click="changePage(1)">下一页</a></li>
+                    </ul>
+                </nav>
             </p>
         </div>
 
+                <!-- <p>每页显示{{limit}}条</p>
+                <p>共{{unPays.length}}条当前工作目录</p>
+
+                <p class="pagination">
+                    <a class="button" @click="changePage(-1)">上一页</a>
+                    当前第<input v-model="page" type="text" class="page">页 共{{ total }}页
+                    <a class="button" @click="changePage(1)">下一页</a>
+                </p> -->
+            </div>
 
 
-        <div id="PaidTable">
-            <p>已缴费明细</p>
-            <p>选择开始筛选日期</p>
-            <vue-datepicker-local v-model="time" format="YYYY-MM"></vue-datepicker-local>
-            <table>
-                <tr>
-                    <th>缴费项目</th>
-                    <!-- <th>总应缴金额(元)</th> -->
-                    <th>总实收金额(元)</th>
-                    <th>总未缴金额(元)</th>
+
+            <div id="PaidTable">
+                <h3>已缴费明细</h3>
+                <div class="row">
+                    <p class="col-sm-2">开始筛选日期</p>
+                    <div class="col-sm-4">
+                        <vue-datepicker-local v-model="time" format="YYYY-MM"></vue-datepicker-local>
+                    </div>
+                </div>
+                    <!-- <p>选择开始筛选日期</p>
+                    <vue-datepicker-local v-model="time" format="YYYY-MM"></vue-datepicker-local> -->
+
+                <table class="table table-striped table-bordered">
+                   <tbody>
+                        <tr>
+                            <th>缴费项目</th>
+                            <!-- <th>总应缴金额(元)</th> -->
+                            <th>总实收金额(元)</th>
+                            <th>总未缴金额(元)</th>
                     <!-- <th>缴费状态</th>
                         <th></th> -->
                     </tr>
@@ -81,36 +109,42 @@
                         <!-- <td>{{item.deadline}}</td> -->
                         <td>310</td>
                     </tr>
+                </tbody>
                 </table>
             </div>
 
 
-            <button>修改或添加项目</button>
+            <div class="row">
+                            <p class="col-sm-3"></p>
+                            <button class="col-sm-5 btn btn-success">修改或添加项目</button>
+                        </div>
         </div>
-    </template>
+    </div>
+</div>
+</template>
 
-    <script>
-    import VueDatepickerLocal from 'vue-datepicker-local'
-    import PropertyHeader from './PropertyHeader'
-    export default {
-      components: {
-        VueDatepickerLocal,
-        PropertyHeader
-    },
-    data () {
-        return {
-            time: new Date(),
-            unPays: [
-            {name: '张三', project: '物管费', deadline: '2018-4-15', money: '50', house: '1-01-01', phone: '13112341234'},
-            {name: '张三', project: '停车费', deadline: '2018-3-31', money: '155', house: '1-01-01', phone: '13112341234'},
-            {name: '张三', project: '物管费', deadline: '2018-3-15', money: '50', house: '1-01-01', phone: '13112341234'},
-            {name: '李四', project: '物管费', deadline: '2018-4-15', money: '50', house: '1-02-01', phone: '13543214321'},
-            {name: '李四', project: '停车费', deadline: '2018-3-31', money: '155', house: '1-02-01', phone: '13543214321'},
-            {name: '李四', project: '物管费', deadline: '2018-3-15', money: '50', house: '1-02-01', phone: '13543214321'}
-            ],
-            total: 0,
-            limit: 5,
-            page: 1
+<script>
+import VueDatepickerLocal from 'vue-datepicker-local'
+import PropertyHeader from './PropertyHeader'
+export default {
+  components: {
+    VueDatepickerLocal,
+    PropertyHeader
+},
+data () {
+    return {
+        time: new Date(),
+        unPays: [
+        {name: '张三', project: '物管费', deadline: '2018-4-15', money: '50', house: '1-01-01', phone: '13112341234'},
+        {name: '张三', project: '停车费', deadline: '2018-3-31', money: '155', house: '1-01-01', phone: '13112341234'},
+        {name: '张三', project: '物管费', deadline: '2018-3-15', money: '50', house: '1-01-01', phone: '13112341234'},
+        {name: '李四', project: '物管费', deadline: '2018-4-15', money: '50', house: '1-02-01', phone: '13543214321'},
+        {name: '李四', project: '停车费', deadline: '2018-3-31', money: '155', house: '1-02-01', phone: '13543214321'},
+        {name: '李四', project: '物管费', deadline: '2018-3-15', money: '50', house: '1-02-01', phone: '13543214321'}
+        ],
+        total: 0,
+        limit: 5,
+        page: 1
             // paids: [
             // {name: '物管费', paidMoney: '1500', unPayMoney: '200'},
             // {name: '停车费', paidMoney: '', unPayMoney: ''}
@@ -160,3 +194,28 @@
       }
   }
   </script>
+
+
+  <style>
+  .jumbotron {
+    margin: 0.4rem 0.3rem 0.4rem 0.1rem;
+    /*/*width: 90%;*/
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 0.2rem;
+    background: rgba(255, 255, 255, 0.7);
+}
+#myPageControl p {
+    font-size: 0.15rem;
+    display: inline;
+    }
+#sideBar {
+    margin-top: 0.4rem;
+    margin-left: 0.1rem;
+
+}
+/*table {
+    text-align: center;
+}*/
+    </style>

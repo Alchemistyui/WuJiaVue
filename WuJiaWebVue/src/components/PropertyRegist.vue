@@ -1,5 +1,5 @@
  <template>
-     <div>
+     <div id="PropertyRegist">
          <p>身份认证</p>
          <p>我们会为你分配一个新的公司账号</p>
 
@@ -37,6 +37,7 @@
 <script>
 import CitySelect from './CitySelect.vue'
 export default {
+    name: 'PropertyRegist',
     data() {
         return {
             contact: '',

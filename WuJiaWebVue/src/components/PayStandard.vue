@@ -28,7 +28,7 @@
                     </div>
                     <div class="form-group">
                         <p><label class="col-sm-2 control-label text-left" for="money">费用详情</label>
-                            <div class="col-sm-2"><input class="form-control" type="number" id="money" v-model="money"></div>元/月</p>
+                            <div class="col-sm-2"><input class="form-control" type="number" id="money" v-model="money"></div><label>元/月</label></p>
                         </div>
                         <!-- <p><label for="money">费用详情 </label><input type="number" id="money" v-model="money">元/月</p> -->
 

@@ -48,9 +48,10 @@
                 <p class="col-sm-3 text-center"><b>应付金额 &nbsp;&nbsp; </b>{{money}}</p>
             </div>
 
-            <p class="col-sm-4"></p>
-            <button class="btn btn-success col-sm-3">确定</button>
-
+            <div class="row">
+                <p class="col-sm-4"></p>
+                <button class="btn btn-success col-sm-3">确定</button>
+            </div>
             <!-- </div> -->
         </div>
     </div>

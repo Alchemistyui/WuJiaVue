@@ -37,8 +37,8 @@
                                     </select>
                                 </div>
                                 <div class="row">
-                                    <p class="col-sm-4"></p>
-                                    <button  class="btn btn-success col-sm-6" @click="propertyRegist = true">注册</button>
+                                    <!-- <p class="col-sm-6"></p> -->
+                                    <button  class="btn btn-success col-sm-6" @click="show">注册</button>
                                 </div>
                                 <p><small>点击「注册」按钮，即代表你同意<a>吾家用户协议</a></small></p>
 
@@ -73,6 +73,12 @@
                             propertyRegist: false
 
 
+                        }
+                    },
+                    methods: {
+                        show: function () {
+                            this.propertyRegist = true
+                            alert('emm')
                         }
                     }
                 }

@@ -1,15 +1,16 @@
 <template>
   <div id="app">
 
-    <!-- <InitialPages :style="{backgroundImage: 'url(' +backgroundURL + ')'}"></InitialPages> -->
-    <!-- <PropertyHomePage></PropertyHomePage> -->
+    <InitialPages :style="{backgroundImage: 'url(' +backgroundURL + ')'}"></InitialPages>
+    <!-- <PropertyRegist></PropertyRegist> -->
+  
     <!-- <PropertyAccount></PropertyAccount> -->
     <!-- <ModuleManage></ModuleManage> -->
     <!-- <ServiceManage></ServiceManage> -->
     <!-- <EstateInform></EstateInform> -->
     <!-- <ResidentInfo></ResidentInfo> -->
     <!-- <PayStandard></PayStandard> -->
-    <PayState></PayState>
+    <!-- <PayState></PayState> -->
     <!-- <ServiceProblem></ServiceProblem> -->
     <!-- <SolveProblem></SolveProblem> -->
     
@@ -30,6 +31,7 @@ import PayState from './components/PayState'
 import ServiceProblem from './components/ServiceProblem'
 import SolveProblem from './components/SolveProblem'
 import NoNavHeader from './components/NoNavHeader'
+import PropertyRegist from './components/PropertyRegist'
 
 export default {
   name: 'app',
@@ -45,7 +47,8 @@ export default {
     PayState,
     ServiceProblem,
     SolveProblem,
-    NoNavHeader
+    NoNavHeader,
+    PropertyRegist
 
   },
   data () {

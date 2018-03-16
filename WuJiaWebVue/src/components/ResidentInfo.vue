@@ -256,7 +256,7 @@ export default {
     margin-left: 0.1rem;
 }
 #projectTable p, #residentTable p {
-    font-size: smaller;
+    font-size: 0.15rem;
     display: inline;
 }
 /*.pagination {

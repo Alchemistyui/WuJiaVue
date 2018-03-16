@@ -1,42 +1,50 @@
 <template>
-    <div>
-        <div id="unsolvedTable">
-            <p>未解决问题</p>
-            <table>
-                <tr>
-                    <th>提出人</th>
-                    <th>所属小区</th>
-                    <th>问题简述</th>
-                    <th></th>
-                    
-                </tr>
+    <div> 
 
-                <tr v-for="item in unsolveds">
-                    <td>{{item.person}}</td>
-                    <td>{{item.estate}}</td>
-                    <td>{{item.intro}}</td>
-                    <td><a href="#">前往解决</a></td>
-                </tr>
+        <PropertyHeader></PropertyHeader>
+
+        <div class="jumbotron">
+            <div id="unsolvedTable">
+                <h3>未解决问题</h3>
+                <table class="table table-striped table-bordered">
+                   <tbody>
+                    <tr>
+                        <th>提出人</th>
+                        <th>所属小区</th>
+                        <th>问题简述</th>
+                        <th></th>
+
+                    </tr>
+
+                    <tr v-for="item in unsolveds">
+                        <td>{{item.person}}</td>
+                        <td>{{item.estate}}</td>
+                        <td>{{item.intro}}</td>
+                        <td><a href="#">前往解决</a></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
         <div id="solvedTable">
-            <p>已解决问题</p>
-            <table>
-                <tr>
-                    <th>提出人</th>
-                    <th>处理客服</th>
-                    <th>问题简述</th>
-                    <th>住户评价</th>
-                </tr>
+         <h3>已解决问题</h3>
+         <table class="table table-striped table-bordered">
+           <tbody>
+            <tr>
+                <th>提出人</th>
+                <th>处理客服</th>
+                <th>问题简述</th>
+                <th>住户评价</th>
+            </tr>
 
-                <tr v-for="item in solveds">
-                    <td>{{item.person}}</td>
-                    <td>{{item.service}}</td>
-                    <td>{{item.intro}}</td>
-                    <td>{{item.evaluation}}</td>
-                </tr>
-            </table>
+            <tr v-for="item in solveds">
+                <td>{{item.person}}</td>
+                <td>{{item.service}}</td>
+                <td>{{item.intro}}</td>
+                <td>{{item.evaluation}}</td>
+            </tr>
+        </tbody>              
+    </table>
 
 <!--    <p>共{{filteredArray.length}}条当前工作目录</p>
 
@@ -47,13 +55,19 @@
             </p>-->
         </div> 
 
-
     </div>
+</div>
 </template>
 
 
 <script>
+import PropertyHeader from './PropertyHeader'
+
 export default {
+    components: {
+        PropertyHeader
+
+    },
     data () {
         return {
             unsolveds: [
@@ -62,10 +76,22 @@ export default {
             {person: '王五', estate: 'B小区', intro: '2栋有一个电梯坏了没有修理'}
             ],
             solveds: [
-            {person: '小明', estate: 'A小区', intro: '车位被别人占了'},
-            {person: '小红', estate: 'B小区', intro: '电梯里垃圾没有及时清理'}
+            {person: '小明', estate: 'A小区', intro: '车位被别人占了', service: '李雷', evaluation:'优良'},
+            {person: '小红', estate: 'B小区', intro: '电梯里垃圾没有及时清理', service: '韩梅梅', evaluation:'中等'}
             ]
         }
     }
 }
 </script>
+
+<style>
+.jumbotron {
+    margin: 0.4rem 0.6rem 0.4rem 0.6rem;
+    width: 90%;
+    border: 1px solid #cccccc;
+   /* -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;*/
+   border-radius: 0.2rem;
+   background: rgba(255, 255, 255, 0.7);
+}
+</style>

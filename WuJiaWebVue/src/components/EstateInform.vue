@@ -13,7 +13,7 @@
             <div id="main"  class="col-sm-9 jumbotron">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <p><label id="nameLabel" class="col-sm-2 control-label text-left" for="informName">公告标题 </label>
+                        <p><label id="nameLabel" class="col-sm-2 control-label text-center" for="informName">公告标题 </label>
                             <!-- <p class="col-sm-1"></p> -->
                             <div class="col-sm-8"><input class="form-control" id="informName" v-model="informName"></div></p>
                         </div>
@@ -93,7 +93,7 @@
 }*/
 .jumbotron {
     margin: 0.4rem 0.3rem 0.4rem 0.1rem;
-    /*/*width: 90%;*/
+    width: 75%;
     border: 1px solid #cccccc;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -118,8 +118,14 @@
     margin-top: 0.1rem;
 }
 #nameLabel {
-    margin-left: -0.4rem;
+    margin-left: -0.2rem;
     padding-right: 0.2rem;
     margin-right: 0.4rem;
+}
+#main {
+    padding-left: 1.5rem;
+}
+#informName {
+    margin-left: -0.2rem;
 }
 </style>
