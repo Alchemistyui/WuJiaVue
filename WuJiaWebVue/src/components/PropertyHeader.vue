@@ -1,9 +1,13 @@
 <template>
 	<div id="PropertyHeader" class="box">
-		<a href=""><img v-bind:src="logoURL" alt="吾家" id="logo"></a>
+		<router-link v-bind:to="'/PropertyAccount'"><img v-bind:src="logoURL" alt="吾家" id="logo"></router-link>
 		
-		<div v-for="(list,index) in navLists" class="nav"  @click="isSelected(index)"><a href="#" :class="[{ selected:selectedIndex == index}, navLink]">{{list.text}}</a></div>
+		 <div v-for="(list,index) in navLists" class="nav"><router-link  @click.native="isSelected(index)" v-bind:to="list.url" :class="[{ selected: list.active}, nav]">{{list.text}}</router-link></div>
+		
 
+		<!-- <ul class="nav nav-pills" v-for="(list,index) in navLists">
+			<li role="presentation" class="active" @click="isSelected(index)"><a href="#">Home</a></li>
+		</ul> -->
 		<a href=""><img v-bind:src="portraitURL" alt="头像" id="portrait"></a>
 		<a href=""><img v-bind:src="questionURL" alt="问题" id="question"></a>
 		
@@ -16,23 +20,29 @@ export default {
 	data () {
 		return {
 			navLists:[
-			{ "text":"首页" },
-			{ "text":"物业缴费" },
-			{ "text":"托管订单" },
-			{ "text":"来访邀请" },
-			{ "text":"我的托管" },
-			{ "text":"我的消息" },
+			{ "text":"首页", url: '/PropertyAccount', active: true },
+			{ "text":"客服人员", url: '/ServiceManage', active: false },
+			{ "text":"缴费管理", url: '/PayState', active: false },
+			{ "text":"小区管理", url: '/EstateInform', active: false },
+			// { "text":"缴费管理", url: '/PayState' }
+			// { "text":"物业账户" }
 			],
 			selectedIndex: 0,
 			logoURL: './src/assets/images/logo.JPG',
 			questionURL: './src/assets/images/question.png',
 			portraitURL: './src/assets/images/portrait.png',
-			navLink: 'navLink'
+			navLink: 'navLink',
+			nav : 'nav'
 		}
 	},
 	methods:{
 		isSelected:function(index){
-			this.selectedIndex = index;
+			// alert(index);
+			// this.selectedIndex = index;
+			for (var i = 0; i < 4; i++) {
+				this.navLists[i].active = false
+			}
+			this.navLists[index].active = true
 		}
 	}
 }
@@ -58,6 +68,7 @@ export default {
 	margin-left: 0.2rem;
 	cursor: pointer;
 	width: 100%;
+	text-align: center;
 }
 
 .navLink {
@@ -80,7 +91,7 @@ img {
 .selected {
 	background-color: #F7DA32;
 }
- #PropertyHeader a:hover,#PropertyHeader a:visited,#PropertyHeader a:link,#PropertyHeader a:active {
+#PropertyHeader a:hover,#PropertyHeader a:visited,#PropertyHeader a:link,#PropertyHeader a:active {
 	text-decoration: none;
 	color: #000;
 }

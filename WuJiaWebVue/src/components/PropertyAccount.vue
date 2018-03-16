@@ -1,7 +1,7 @@
 <template>
     <div id="account">
 
-        <PropertyHeader></PropertyHeader>
+        <!-- <PropertyHeader></PropertyHeader> -->
 
         <!-- 需额外的后端数据 -->
         <div id="info" class="panel panel-default">
@@ -35,7 +35,7 @@
                     <td>{{item.standard}}</td>
                     <!-- <td>{{item.time - date - item.boughtDate}}</td> -->
                     <td>{{item.date}}</td>
-                    <td><a href="#">续费</a></td>
+                    <td><router-link v-bind:to="'/ModuleManage'">续费</router-link></td>
                 </tr>
             </tbody>
         </table>

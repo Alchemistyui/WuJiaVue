@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <PropertyHeader></PropertyHeader>
+    <div id="payStandard">
+        <!-- <PropertyHeader></PropertyHeader> -->
 
         <div class="jumbotron">
             <form class="form-horizontal">
@@ -40,7 +40,7 @@
 
                         <div class="row">
                             <p class="col-sm-2"></p>
-                            <button class="col-sm-4 btn btn-success">确认</button>
+                            <router-link v-bind:to="'/PayState'"  @click.native="alert('已成功修改！')" class="col-sm-4 btn btn-success">确认</router-link>
                         </div>
                     </form>
                 </div>
@@ -70,7 +70,7 @@
         </script>
 
         <style>
-        .jumbotron {
+        #payStandard .jumbotron {
             margin: 0.6rem 0.3rem 0.6rem 0.6rem;
             width: 90%;
             border: 1px solid #cccccc;
@@ -89,7 +89,7 @@
         button {
             margin-top: 0.3rem;
         }
-        .row, .form-group {
+        #payStandard .row,#payStandard .form-group {
             padding-left: 2.5rem;
         }
         </style>

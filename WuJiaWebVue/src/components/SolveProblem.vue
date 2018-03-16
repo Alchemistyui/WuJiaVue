@@ -1,7 +1,7 @@
 <template>
     <div id="solveProblem">
 
-        <PropertyHeader></PropertyHeader>
+        <!-- <PropertyHeader></PropertyHeader> -->
 
         <div class="jumbotron">
             <div class="row">
@@ -45,7 +45,7 @@
 
                 <div class="row">
                     <p class="col-sm-3"></p>
-                    <button class="col-sm-4 btn btn-success">确认</button>
+                    <router-link v-bind:to="'/ServiceProblem'" class="col-sm-4 btn btn-success">确认</router-link>
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style>
-.jumbotron {
+#solveProblem .jumbotron {
     margin: 0.6rem 0.3rem 0.6rem 0.6rem;
     width: 90%;
     border: 1px solid #cccccc;
@@ -98,5 +98,8 @@ export default {
 }
 #replay textarea {
     font-size: large;
+}
+#solveProblem a {
+    margin-top: 0.2rem;
 }
 </style>

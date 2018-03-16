@@ -1,12 +1,12 @@
 <template>
     <div id="inform">
-        <PropertyHeader></PropertyHeader>
+        <!-- <PropertyHeader></PropertyHeader> -->
 
         <div class="row">
-            <div id="sideBar" class="col-sm-2">
+            <div class="col-sm-2 sideBar">
                 <ul class="list-group">
-                    <li class="list-group-item"><a href="#">通知公告</a></li>
-                    <li class="list-group-item"><a href="#">房屋及住户信息</a></li>
+                    <li class="list-group-item"><router-link v-bind:to="'/EstateInform'">通知公告</router-link></li>
+                    <li class="list-group-item"><router-link v-bind:to="'/ResidentInfo'">房屋及住户信息</router-link></li>
                 </ul>
             </div>
 
@@ -34,7 +34,8 @@
                         </div>
                         <div class="row">
                             <p class="col-sm-3"></p>
-                            <button class="col-sm-5 btn btn-success">立刻发布</button>
+                            <router-link v-bind:to="'/EstateInform'" @click.native="message('已发布')" class="col-sm-5 btn btn-success">立刻发布</router-link>
+                            <!-- <button class="btn btn-success" onclick="alert('已发送提醒')">提醒缴费</button> -->
                         </div>
                         <div class="row">
                             <p class="col-sm-2"><label>发布时间</label></p>
@@ -44,7 +45,8 @@
                         </div>
                         <div class="row">
                             <p class="col-sm-3"></p>
-                            <button class="col-sm-5 btn btn-success">定时发布</button>
+                            <!-- <button class="col-sm-5 btn btn-success">定时发布</button> -->
+                            <router-link v-bind:to="'/EstateInform'" @click.native="message('将在指定日期发布')" class="col-sm-5 btn btn-success">定时发布</router-link>
                         </div>
                         
 
@@ -77,6 +79,13 @@
             // day: now.getDate(),
             date: now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate()
         }
+    },
+    methods: {
+        message: function (msg) {
+            alert(msg),
+            this.informName = '',
+            this.informContent = ''
+        }
     }
     // computed: {
     //     date () {
@@ -91,7 +100,7 @@
     margin:0;
     padding:0;
 }*/
-.jumbotron {
+#inform .jumbotron {
     margin: 0.4rem 0.3rem 0.4rem 0.1rem;
     width: 75%;
     border: 1px solid #cccccc;
@@ -100,18 +109,18 @@
     border-radius: 0.2rem;
     background: rgba(255, 255, 255, 0.7);
 }
-#sideBar {
+.sideBar {
     margin-top: 0.4rem;
     margin-left: 0.1rem;
 }
-#main textarea {
+#inform #main textarea {
     font-size: large;
 }
 /*#main button {
     margin-top: 0.1rem;
     margin-bottom: 0.1rem;
 }*/
-.row {
+#inform .row {
     margin-top: 0.2rem;
 }
 #nameLabel, #contentLabel {
@@ -122,7 +131,7 @@
     padding-right: 0.2rem;
     margin-right: 0.4rem;
 }
-#main {
+#inform #main {
     padding-left: 1.5rem;
 }
 #informName {

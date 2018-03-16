@@ -1,6 +1,6 @@
 <template>
     <div id="homePage">
-        <PropertyHeader></PropertyHeader>
+        <!-- <PropertyHeader></PropertyHeader> -->
 
 
 

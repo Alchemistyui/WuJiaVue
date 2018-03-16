@@ -1,7 +1,7 @@
 <template>
     <div id="moduleManage">
 
-      <PropertyHeader></PropertyHeader>
+      <!-- <PropertyHeader></PropertyHeader> -->
 
       <!-- <div id="info" class="panel panel-default"> -->
         <div class="jumbotron" id="frame">
@@ -49,8 +49,10 @@
             </div>
 
             <div class="row">
-                <p class="col-sm-4"></p>
-                <button class="btn btn-success col-sm-3">确定</button>
+                <p class="col-sm-3"></p>
+                <router-link v-bind:to="'/PropertyAccount'" class="btn btn-warning col-sm-2">返回</router-link>
+                <p class="col-sm-1"></p>
+                <button class="btn btn-success col-sm-2">确定</button>
             </div>
             <!-- </div> -->
         </div>

@@ -1,5 +1,5 @@
 <template>
-    <div id="mainFrame">
+    <div id="mainFrame" :style="{backgroundImage: 'url(' +backgroundURL + ')'}">
         <no-nav-header></no-nav-header>
         <div class="container-fluid">
             <div id="mainRow" class="row">
@@ -34,7 +34,8 @@
                     <div class="row">
                         <a id="forget" @click="selected = 'forget'" class="col-sm-7 small text-left">忘记密码</a>
                         <p class="col-sm-3"></p>
-                        <button id="submit" class="col-sm-7 btn btn-success">登录</button>
+                        <!-- <router-link v-bind:to="'/PropertyAccount'">PropertyAccount</router-link> -->
+                        <router-link v-bind:to="'/PropertyAccount'" id="submit" class="col-sm-7 btn btn-success">登录</router-link>
                     </div>
 
                     <div class="row">
@@ -87,8 +88,8 @@ export default {
             userEmail: '1319525622@qq.com',
             forgetSafeCode: '',
             selected: 'logIn',
-            resetByPhone: true
-            // backgroundURL: './src/assets/images/house.jpg'
+            resetByPhone: true,
+            backgroundURL: './src/assets/images/house.jpg'
         }
     }
 }

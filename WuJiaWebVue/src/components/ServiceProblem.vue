@@ -1,50 +1,56 @@
 <template>
-    <div> 
+    <div class="servicePages"> 
 
-        <PropertyHeader></PropertyHeader>
+        <!-- <PropertyHeader></PropertyHeader> -->
+        <div class="row">
+            <div  class="sideBar col-sm-2">
+                <ul class="list-group">
+                    <li class="list-group-item"><router-link v-bind:to="'/ServiceManage'">客服人员</router-link></li>
+                    <li class="list-group-item"><router-link v-bind:to="'/ServiceProblem'">客服问题</router-link></li>
+                </ul>
+            </div>
+            <div class="jumbotron col-sm-9">
+                <div id="unsolvedTable">
+                    <h3>未解决问题</h3>
+                    <table class="table table-striped table-bordered">
+                       <tbody>
+                        <tr>
+                            <th>提出人</th>
+                            <th>所属小区</th>
+                            <th>问题简述</th>
+                            <th></th>
 
-        <div class="jumbotron">
-            <div id="unsolvedTable">
-                <h3>未解决问题</h3>
-                <table class="table table-striped table-bordered">
-                   <tbody>
-                    <tr>
-                        <th>提出人</th>
-                        <th>所属小区</th>
-                        <th>问题简述</th>
-                        <th></th>
+                        </tr>
 
-                    </tr>
+                        <tr v-for="item in unsolveds">
+                            <td>{{item.person}}</td>
+                            <td>{{item.estate}}</td>
+                            <td>{{item.intro}}</td>
+                            <td><router-link v-bind:to="'/SolveProblem'">前往解决</router-link></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                    <tr v-for="item in unsolveds">
-                        <td>{{item.person}}</td>
-                        <td>{{item.estate}}</td>
-                        <td>{{item.intro}}</td>
-                        <td><a href="#">前往解决</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <div id="solvedTable">
+             <h3>已解决问题</h3>
+             <table class="table table-striped table-bordered">
+               <tbody>
+                <tr>
+                    <th>提出人</th>
+                    <th>处理客服</th>
+                    <th>问题简述</th>
+                    <th>住户评价</th>
+                </tr>
 
-        <div id="solvedTable">
-         <h3>已解决问题</h3>
-         <table class="table table-striped table-bordered">
-           <tbody>
-            <tr>
-                <th>提出人</th>
-                <th>处理客服</th>
-                <th>问题简述</th>
-                <th>住户评价</th>
-            </tr>
-
-            <tr v-for="item in solveds">
-                <td>{{item.person}}</td>
-                <td>{{item.service}}</td>
-                <td>{{item.intro}}</td>
-                <td>{{item.evaluation}}</td>
-            </tr>
-        </tbody>              
-    </table>
+                <tr v-for="item in solveds">
+                    <td>{{item.person}}</td>
+                    <td>{{item.service}}</td>
+                    <td>{{item.intro}}</td>
+                    <td>{{item.evaluation}}</td>
+                </tr>
+            </tbody>              
+        </table>
 
 <!--    <p>共{{filteredArray.length}}条当前工作目录</p>
 
@@ -56,6 +62,7 @@
         </div> 
 
     </div>
+</div>
 </div>
 </template>
 
@@ -85,13 +92,17 @@ export default {
 </script>
 
 <style>
-.jumbotron {
-    margin: 0.4rem 0.6rem 0.4rem 0.6rem;
-    width: 90%;
+.servicePages .jumbotron {
+    margin: 0.4rem 0.3rem 0.2rem 0rem;
+    width: 75%;
     border: 1px solid #cccccc;
    /* -webkit-border-radius: 3px;
    -moz-border-radius: 3px;*/
    border-radius: 0.2rem;
    background: rgba(255, 255, 255, 0.7);
+}
+.sideBar {
+    margin-top: 0.4rem;
+    margin-left: 0.1rem;
 }
 </style>

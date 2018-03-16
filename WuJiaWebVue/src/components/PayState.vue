@@ -1,15 +1,15 @@
 <template>
     <div>
 
-       <PropertyHeader></PropertyHeader>
+       <!-- <PropertyHeader></PropertyHeader> -->
 
-       <div class="row">
+      <!--  <div class="row">
         <div id="sideBar" class="col-sm-2">
             <ul class="list-group">
-                <li class="list-group-item"><a href="#">缴费状态</a></li>
-                <li class="list-group-item"><a href="#">缴费标准</a></li>
+                <li class="list-group-item"><router-link v-bind:to="'/PayState'">缴费状态</router-link></li>
+                <li class="list-group-item"><router-link v-bind:to="'/PayStandard'">缴费标准</router-link></li>
             </ul>
-        </div>
+        </div> -->
 
         <!-- <div id="sideBar">
             <table>
@@ -18,7 +18,7 @@
             </table>
         </div> -->
 
-        <div id="main" class="col-sm-9 jumbotron">
+        <div id="main" class="stateJumbotron">
             <div id="unPayTable">
                 <h3>未缴费情况</h3>
                 <table class="table table-striped table-bordered">
@@ -45,7 +45,7 @@
                 </tbody>
             </table>
 
-            <div id="myPageControl" class="row">
+            <div id="statePageControl" class="row">
                 <p class="col-sm-4">共{{unPays.length}}条当前工作目录&nbsp;&nbsp; 每页显示{{limit}}条</p>
 
                 <p class="pagination col-sm-4">
@@ -75,7 +75,7 @@
             <div id="PaidTable">
                 <h3>已缴费明细</h3>
                 <div class="row">
-                    <p class="col-sm-2">开始筛选日期</p>
+                    <p class="col-sm-2 text-right">开始筛选日期</p>
                     <div class="col-sm-4">
                         <vue-datepicker-local v-model="time" format="YYYY-MM"></vue-datepicker-local>
                     </div>
@@ -116,7 +116,7 @@
 
             <div class="row">
                             <p class="col-sm-3"></p>
-                            <button class="col-sm-5 btn btn-success">修改或添加项目</button>
+                            <router-link id="edit" v-bind:to="'/PayStandard'"  class="col-sm-5 btn btn-success">修改或添加项目</router-link>
                         </div>
         </div>
     </div>
@@ -197,16 +197,16 @@ data () {
 
 
   <style>
-  .jumbotron {
-    margin: 0.4rem 0.3rem 0.4rem 0.1rem;
-    /*/*width: 90%;*/
+  .stateJumbotron {
+    margin: 0.4rem 0.6rem 0.4rem 0.6rem;
+    width: 90%;
     border: 1px solid #cccccc;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 0.2rem;
     background: rgba(255, 255, 255, 0.7);
 }
-#myPageControl p {
+#statePageControl p {
     font-size: 0.15rem;
     display: inline;
     }
@@ -214,6 +214,13 @@ data () {
     margin-top: 0.4rem;
     margin-left: 0.1rem;
 
+}
+#edit {
+    margin-top: 0.2rem;
+    bottom: 0.2rem;
+}
+#PaidTable table {
+    margin-top: 0.2rem;
 }
 /*table {
     text-align: center;

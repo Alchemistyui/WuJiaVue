@@ -19,11 +19,11 @@ export default {
 		return {
 			navLists:[
 			{ "text":"首页" },
-			{ "text":"客服人员" },
-			{ "text":"小区管理" },
-			{ "text":"车位管理" },
-			{ "text":"物业管理" },
-			{ "text":"物业账户" },
+			{ "text":"物业缴费"},
+			{ "text":"托管订单" },
+			{ "text":"来访邀请" },
+			{ "text":"我的托管" },
+			{ "text":"我的消息" },
 			],
 			selectedIndex: 0,
 			logoURL: './src/assets/images/logo.JPG',

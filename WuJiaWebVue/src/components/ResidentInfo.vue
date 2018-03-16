@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <PropertyHeader></PropertyHeader>
+    <div id="residentInfo">
+        <!-- <PropertyHeader></PropertyHeader> -->
 
         <div class="row">
-            <div id="sideBar" class="col-sm-2">
+            <div class="col-sm-2 sideBar">
                 <ul class="list-group">
-                    <li class="list-group-item"><a href="#">通知公告</a></li>
-                    <li class="list-group-item"><a href="#">房屋及住户信息</a></li>
+                    <li class="list-group-item"><router-link v-bind:to="'/EstateInform'">通知公告</router-link></li>
+                    <li class="list-group-item"><router-link v-bind:to="'/ResidentInfo'">房屋及住户信息</router-link></li>
                 </ul>
             </div>
 
@@ -57,7 +57,8 @@
                             <td>{{item.deadline}}</td>
                             <td>{{item.money}}</td>
                             <td>{{item.state}}</td>
-                            <td><a v-if="item.state != '已缴费'">前往缴费</a></td>
+                            <td><button v-if="item.state != '已缴费'" class="btn btn-success" onclick="alert('已发送提醒')">提醒缴费</button></td>
+                            <!-- <td><a v-if="item.state != '已缴费'">前往缴费</a></td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -65,7 +66,7 @@
                 <div class="row">
                     <p class="col-sm-4">共{{projects.length}}条当前工作目录&nbsp;&nbsp; 每页显示5条</p>
 
-                    <p class="pagination col-sm-4">
+                    <p class="pagination col-sm-5">
                         <!-- <p>每页显示5条</p> -->
                         <nav aria-label="...">
                           <ul class="pager">
@@ -103,7 +104,7 @@
         <div class="row">
             <p class="col-sm-4">共{{residents.length}}条当前工作目录&nbsp;&nbsp; 每页显示5条</p>
 
-            <p class="pagination col-sm-4">
+            <p class="pagination col-sm-5">
                 <!-- <p>每页显示5条</p> -->
                 <nav aria-label="...">
                   <ul class="pager">
@@ -242,7 +243,7 @@ export default {
   </script>
 
   <style>
-  .jumbotron {
+  #residentInfo .jumbotron {
     margin: 0.4rem 0.3rem 0.4rem 0.1rem;
     width: 75%;
     border: 1px solid #cccccc;
@@ -251,10 +252,10 @@ export default {
     border-radius: 0.2rem;
     background: rgba(255, 255, 255, 0.7);
 }
-#sideBar {
+/*#residentInfo .sideBar {
     margin-top: 0.4rem;
     margin-left: 0.1rem;
-}
+}*/
 #projectTable p, #residentTable p {
     font-size: 0.15rem;
     display: inline;
