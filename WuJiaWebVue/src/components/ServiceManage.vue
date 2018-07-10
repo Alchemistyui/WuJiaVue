@@ -26,7 +26,7 @@
                             <td>{{service.name}}</td>
                             <td>{{service.email}}</td>
                             <td>{{service.phone}}</td>
-                            <td style="text-align: center"><button class="btn btn-success" v-on:click="deletePerson(service.index)">解绑</button></td>
+                            <td style="text-align: center"><button class="btn btn-success" v-on:click="deletePerson(index)">解绑</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -90,11 +90,16 @@
                 methods:{
 
                     deletePerson: function(index){
+                        console.log(index);
                         this.services.splice(index,1);
                     },
                     addPerson: function () {
                         // alert('233'),
                         this.services.push({name: this.name, email: this.email, phone: this.phone})
+                        this.name = '';
+                        this.email = '';
+                        this.phone = '';
+                        this.IDNumber = '';
                         // alert('emm')
                     }
                 }

@@ -55,7 +55,7 @@
                     <td style="width: 25%">{{item.name}}</td>
                     <td style="width: 25%">{{item.standard}}</td>
                     <td style="width: 30%">{{item.intro}}</td>
-                    <td style="width: 25%; text-align: center"><a href="#">查看更多</a></td>
+                    <td style="width: 25%; text-align: center"><router-link v-bind:to="'/ModuleManage'">查看更多</router-link></td>
                 </tr>
             </tbody>
         </table>
